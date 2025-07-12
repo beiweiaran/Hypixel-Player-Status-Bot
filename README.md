@@ -4,13 +4,13 @@ This project is a simple, static HTML page showcasing detailed Hypixel game stat
 
 ## 🌐 Live Demo
 
-> You can view the webpage by opening `honrine-status.html` in your browser.
+> You can view the webpage by opening `index.html` in your browser.
 
 ## 📁 Project Structure
 
 ```
 📂 project-root/
-├── honrine-status.html       # The main single-page HTML file
+├── index.html       # The main single-page HTML file
 ├── 1.ico                     # Favicon used by the webpage
 └── README.md                 # This documentation file
 ```
@@ -25,8 +25,8 @@ This project is a simple, static HTML page showcasing detailed Hypixel game stat
 ## 🛠 How to Use
 
 1. Clone or download this repository.
-2. Ensure `1.ico` is in the same directory as `honrine-status.html`.
-3. Open `honrine-status.html` in your preferred browser.
+2. Ensure `1.ico` is in the same directory as `index.html`.
+3. Open `index.html` in your preferred browser.
 4. Done!
 
 ## 📦 Deployment
@@ -39,7 +39,7 @@ You can deploy this HTML file to any static hosting platform, such as:
 - Cloudflare Pages
 - or your own web server
 
-Make sure `1.ico` is placed alongside `honrine-status.html`.
+Make sure `1.ico` is placed alongside `index.html`.
 
 ## ⚙️ Customization
 
