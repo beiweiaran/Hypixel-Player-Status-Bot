@@ -55,6 +55,42 @@ padding-left: 1.5em;
 </ul>
 <p><em>This is a closed-source project. You can freely use the bot via QQ command interface.</em></p>
 
+<h3>Technical Details for API Usage</h3>
+<blockquote>
+<h4>API Usage</h4>
+<p>Our Hypixel player status QQ bot interacts with the Hypixel API primarily by:</p>
+<ul>
+<li><strong>Core Function:</strong> Receiving user commands on QQ (e.g., <code>/hyp [PlayerName]</code>, <code>/bw [PlayerName]</code>, <code>/sw [PlayerName]</code>). Upon receiving a command, the bot calls the Hypixel API to retrieve relevant player data and formats it for QQ.</li>
+<li><strong>API Endpoints:</strong> Primarily uses the <code>GET /player</code> endpoint to fetch comprehensive player information including UUID, level, achievement points, and detailed game mode statistics (especially for Bedwars and Skywars). Occasionally, other resource-related endpoints (e.g., <code>/resources/games</code>) might be used, but at a very low frequency.</li>
+<li><strong>Authentication:</strong> All requests to the Hypixel API include a valid **API Key** assigned to this project for authentication.</li>
+<li><strong>Data Processing:</strong> The bot parses the JSON data returned by the API, extracting and calculating key metrics like Bedwars K/D, FKDR, and W/L, as well as Skywars K/D and win rates, to present them clearly to QQ users.</li>
+</ul>
+
+<h4>Expected Request Volume</h4>
+<p>Based on current user activity, we estimate the following API request volume:</p>
+<ul>
+<li><strong>Average Frequency:</strong> We anticipate an average of **5-10 API requests per minute**.</li>
+<li><strong>Peak Times:</strong> During high-activity periods (e.g., evenings, weekends), request volume might increase, but we do not expect it to exceed **20-30 API requests per minute**.</li>
+<li><strong>Daily Total:</strong> The estimated daily total requests range from **7,200 to 14,400**. In extreme cases, the total daily requests might reach **43,200**.</li>
+<li><strong>User Base:</strong> The bot currently serves a small community, with moderate growth anticipated. We continuously monitor request volumes and will adjust our caching strategies or notify the API provider if needed.</li>
+</ul>
+
+<h4>Caching Rules</h4>
+<p>To optimize performance, reduce redundant requests, and adhere to API best practices, we implement the following caching strategy:</p>
+<ul>
+<li><strong>Cached Content:</strong> We primarily cache general player statistics (e.g., level, achievements, Karma) and core game mode statistics like Bedwars and Skywars.</li>
+<li><strong>Cache Expiry (TTL):</strong>
+    <ul>
+        <li><strong>General Player Data (e.g., <code>/hyp</code> command results):</strong> Cached for **5-10 minutes**. Data that changes less frequently, like Karma or achievement points, has a longer cache time.</li>
+        <li><strong>More Real-time Data (e.g., player online status, some game mode statistics):</strong> Cached for **2-5 minutes** to ensure reasonable freshness.</li>
+    </ul>
+</li>
+<li><strong>Caching Mechanism:</strong> The bot's backend uses an in-memory cache or simple file/database caching to store recently queried data.</li>
+<li><strong>Cache Refresh:</strong> When cached data expires, the next user query for that player automatically triggers a new API request to fetch and refresh the data. We might consider implementing time-based batch refreshes in the future for further optimization.</li>
+<li><strong>Objective:</strong> Through effective caching, we aim to reduce actual requests to the Hypixel API by at least **60-80%**, thereby lowering server load and improving user experience.</li>
+</ul>
+</blockquote>
+
 ---
 
 <h2>💻 Bot Commands</h2>
@@ -151,3 +187,4 @@ Brewed Potions: <strong>0</strong><br><br>
 
 </body>
 </html>
+```
