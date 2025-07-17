@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hypixel Player Status Bot</title>
+<title>Hypixel Player Stats Bot</title>
 <link rel="icon" href="1.ico" type="image/x-icon">
-<meta name="description" content="Hypixel Player Status Bot - View Honrine's game stats on Hypixel."/>
-<meta property="og:title" content="Hypixel Player Status Bot"/>
+<meta name="description" content="Hypixel Player Stats Bot - View Honrine's game stats on Hypixel."/>
+<meta property="og:title" content="Hypixel Player Stats Bot"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="http://hypbot.hypixel-bot.060505.xyz/"/>
-<meta property="og:site_name" content="Hypixel Player Status Bot"/>
+<meta property="og:site_name" content="Hypixel Player Stats Bot"/>
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hypixel Player Status Bot"/>
+<meta name="twitter:title" content="Hypixel Player Stats Bot"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura.css/css/sakura-dark.css"/>
 <style>
 body {
@@ -41,15 +41,15 @@ padding-left: 1.5em;
 </head>
 <body>
 
-<h1>Hypixel Player Status Bot</h1>
+<h1>Hypixel Player Stats Bot</h1>
 <h3>by <a href="https://hypixel-bot.060505.xyz/" target="_blank">Honrine</a></h3>
 
 
 
 <h2>📌 About</h2>
-<p>This is a Hypixel player status query bot running on <strong>Tencent QQ</strong>. It allows you to fetch player data such as:</p>
+<p>This is a Hypixel player Stats query bot running on <strong>Tencent QQ</strong>. It allows you to fetch player data such as:</p>
 <ul>
-<li>Player level, karma, language, status</li>
+<li>Player level, karma, language, Stats</li>
 <li>Bedwars stats (kills, beds, FKDR, etc.)</li>
 <li>Skywars stats (KD, wins/losses, souls, coins, etc.)</li>
 </ul>
@@ -58,7 +58,7 @@ padding-left: 1.5em;
 <h3>Technical Details for API Usage</h3>
 <blockquote>
 <h4>API Usage</h4>
-<p>Our Hypixel player status QQ bot interacts with the Hypixel API primarily by:</p>
+<p>Our Hypixel player Stats QQ bot interacts with the Hypixel API primarily by:</p>
 <ul>
 <li><strong>Core Function:</strong> Receiving user commands on QQ (e.g., <code>/hyp [PlayerName]</code>, <code>/bw [PlayerName]</code>, <code>/sw [PlayerName]</code>). Upon receiving a command, the bot calls the Hypixel API to retrieve relevant player data and formats it for QQ.</li>
 <li><strong>API Endpoints:</strong> Primarily uses the <code>GET /player</code> endpoint to fetch comprehensive player information including UUID, level, achievement points, and detailed game mode statistics (especially for Bedwars and Skywars). Occasionally, other resource-related endpoints (e.g., <code>/resources/games</code>) might be used, but at a very low frequency.</li>
@@ -82,7 +82,7 @@ padding-left: 1.5em;
 <li><strong>Cache Expiry (TTL):</strong>
     <ul>
         <li><strong>General Player Data (e.g., <code>/hyp</code> command results):</strong> Cached for **5-10 minutes**. Data that changes less frequently, like Karma or achievement points, has a longer cache time.</li>
-        <li><strong>More Real-time Data (e.g., player online status, some game mode statistics):</strong> Cached for **2-5 minutes** to ensure reasonable freshness.</li>
+        <li><strong>More Real-time Data (e.g., player online Stats, some game mode statistics):</strong> Cached for **2-5 minutes** to ensure reasonable freshness.</li>
     </ul>
 </li>
 <li><strong>Caching Mechanism:</strong> The bot's backend uses an in-memory cache or simple file/database caching to store recently queried data.</li>
@@ -116,7 +116,7 @@ Language: <strong>English</strong><br>
 First login: <strong>2023-03-18 18:27:31</strong><br>
 Last login: <strong>N/A</strong><br>
 Last logout: <strong>N/A</strong><br>
-Current status: <strong>Offline or closed state API</strong><br>
+Current Stats: <strong>Offline or closed state API</strong><br>
 Continuous advertising reward: <strong>3</strong>
 </blockquote>
 
@@ -182,7 +182,7 @@ Brewed Potions: <strong>0</strong><br><br>
 🔗 Win Streak: <strong>0</strong>
 </blockquote>
 
-<p style="text-align:center;">© 2025 <a href="https://hypixel-bot.060505.xyz" target="_blank">Honrine</a> • Hypixel Player Status Bot</p>
+<p style="text-align:center;">© 2025 <a href="https://hypixel-bot.060505.xyz" target="_blank">Honrine</a> • Hypixel Player Stats Bot</p>
 
 </body>
 </html>
